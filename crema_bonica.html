@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ALBAMAR MERMER - Crema Bonica</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="ALBAMAR MERMER - Crema Bonica mermer ürünü. Yüksek kaliteli doğal mermer ürünlerimizi keşfedin.">
+  
+    <!-- Modern Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="css/lightbox.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      /* Product Image */
+      .product-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+      }
+      
+      .product-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .product-image img {
+        transition: all 0.4s ease;
+      }
+      
+      .product-image:hover img {
+        transform: scale(1.05);
+      }
+      
+      /* Table Styling */
+      .modern-table {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .modern-table th {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+        font-weight: 600;
+        padding: 1rem;
+        text-align: left;
+      }
+      
+      .modern-table td {
+        padding: 1rem;
+        border-bottom: 1px solid #f3f4f6;
+        transition: all 0.3s ease;
+      }
+      
+      .modern-table tr:hover {
+        background: #f9fafb;
+        transform: scale(1.01);
+      }
+      
+      /* Related Products */
+      .related-product {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+      }
+      
+      .related-product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .related-product img {
+        transition: all 0.4s ease;
+      }
+      
+      .related-product:hover img {
+        transform: scale(1.1);
+      }
+      
+      /* Content Animation */
+      .content-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Stagger Animation */
+      .stagger-animation > * {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: staggerFadeIn 0.6s ease-out forwards;
+      }
+      
+      .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+      .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+      .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+      .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+      .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+      .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+      
+      @keyframes staggerFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Arrow Animation */
+      .arrow-bounce {
+        animation: bounce 2s infinite;
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Strip -->
+    <div id="header-strip" class="bg-red-600 text-white py-2 transition-all duration-500 ease-in-out" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+      <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+        <a href="mailto:export@albamar.com.tr" class="text-sm hover:text-gray-200">&#9993; export@albamar.com.tr</a>
+        <div class="flex space-x-4">
+          <a href="index.html"><img src="images/turkey.svg" alt="Türkçe" class="w-8 h-8"></a>
+          <a href="en/crema_bonica.html"><img src="images/united-kingdom.svg" alt="English" class="w-8 h-8"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <header id="main-header" class="fixed w-full z-20 bg-white shadow-lg transition-all duration-500 ease-in-out" style="top: 40px;">
+      <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <img src="images/albamar.svg" alt="Albamar" class="h-16">
+        </div>
+        <nav class="hidden md:flex space-x-8 font-semibold">
+          <a href="index.html" class="hover:text-red-600 transition-colors">Anasayfa</a>
+          <a href="hakkimizda.html" class="hover:text-red-600 transition-colors">Hakkımızda</a>
+          <a href="urunler.html" class="hover:text-red-600 transition-colors text-red-600">Ürünler</a>
+          <div class="relative" id="production-dropdown">
+            <a href="#" class="hover:text-red-600 transition-colors cursor-pointer" id="production-toggle">Üretim</a>
+            <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 hidden z-50 min-w-[120px]" id="production-menu">
+              <a href="fabrika.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Fabrika</a>
+              <a href="ocak.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Ocak</a>
+            </div>
+          </div>
+          <a href="gallery.html" class="hover:text-red-600 transition-colors">Galeri</a>
+          <a href="iletisim.html" class="hover:text-red-600 transition-colors">İletişim</a>
+        </nav>
+      </div>
+    </header>
+
+        <!-- Product Details -->
+    <section id="product-details" class="pt-44 pb-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <!-- Product Image -->
+          <div class="product-image" data-aos="fade-right">
+            <a href="images/sl/mermer/night_thunder.jpg" data-lightbox="crema-bonica" data-title="Crema Bonica Mermer">
+              <img src="images/sl/mermer/night_thunder.jpg" alt="Crema Bonica" class="w-full h-96 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <!-- Product Information -->
+          <div class="space-y-8" data-aos="fade-left">
+            <div>
+              <h2 class="text-4xl font-bold text-gray-800 mb-4">Crema Bonica</h2>
+              <p class="text-lg text-gray-600 leading-relaxed">
+                Crema Bonica, doğanın en zarif mermer türlerinden biridir. Krem tonlarındaki yumuşak geçişleri ve 
+                doğal desenleri ile her mekana şıklık katar. Yüksek kaliteli işçilik ve modern teknoloji ile 
+                işlenen bu mermer, uzun yıllar boyunca güzelliğini korur.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Renk</h3>
+                <p class="text-gray-600">Zarif Krem</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Doku</h3>
+                <p class="text-gray-600">Pürüzsüz</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Kullanım Alanı</h3>
+                <p class="text-gray-600">İç Mekan</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Kalite</h3>
+                <p class="text-gray-600">Premium</p>
+              </div>
+            </div>
+            
+            <div class="flex space-x-4">
+              <a href="#technical-specs" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-info-circle mr-2"></i>Teknik Özellikler
+              </a>
+              <a href="#gallery" class="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-images mr-2"></i>Galeri
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section id="technical-specs" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Teknik Özellikler</h2>
+          <p class="text-lg text-gray-600">Crema Bonica mermerinin detaylı teknik özellikleri</p>
+        </div>
+        
+        <div class="modern-table" data-aos="fade-up" data-aos-delay="200">
+          <table class="w-full">
+            <thead>
+              <tr>
+                <th width="8%">NO</th>
+                <th width="60%">Mermer Özellikleri</th>
+                <th width="32%">Oranlar</th>
+              </tr>
+            </thead>
+            <tbody class="stagger-animation">
+              <tr>
+                <td>1</td>
+                <td>Sertlik (Mosh):</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Nokta yükü dayanımı (kgf/cm²):</td>
+                <td>57,59</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Poisson oranı:</td>
+                <td>0,316</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Elastisite modülü (GPa):</td>
+                <td>35,37</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>İçsel sürtünme açısı (°):</td>
+                <td>49,73</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Kohezyon (kgf/cm²):</td>
+                <td>202,24</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Tek eksenli basınç dayanımı (kgf/cm²):</td>
+                <td>933,74</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Eğilme dayanımı (kgf/cm²):</td>
+                <td>141,28</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Dolaylı çekme dayanımı (kgf/cm²):</td>
+                <td>74,10</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Darbe dayanımı (kgf/cm²):</td>
+                <td>3,44</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Suya dayanım indeksi:</td>
+                <td>%99,75</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Nem oranı:</td>
+                <td>%0,109</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Gözeneklilik:</td>
+                <td>%0,195</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Özgül ağırlık:</td>
+                <td>%2,695</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Doluluk oranı:</td>
+                <td>%99,80</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section id="gallery" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Ürün Galerisi</h2>
+          <p class="text-lg text-gray-600">Crema Bonica mermerinin farklı açılardan görünümleri</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 stagger-animation">
+          <div class="product-image" data-aos="fade-up" data-aos-delay="100">
+            <a href="images/sl/mermer/crema_Bonica/CREMA_BONICA_1.jpg" data-lightbox="crema-bonica-gallery" data-title="Crema Bonica Mermer - Görünüm 1">
+              <img src="images/sl/mermer/crema_Bonica/CREMA_BONICA_1-1.jpg" alt="Crema Bonica Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <div class="product-image" data-aos="fade-up" data-aos-delay="200">
+            <a href="images/sl/mermer/crema_Bonica/CREMA_BONICA_2.jpg" data-lightbox="crema-bonica-gallery" data-title="Crema Bonica Mermer - Görünüm 2">
+              <img src="images/sl/mermer/crema_Bonica/CREMA_BONICA_2.jpg" alt="Crema Bonica Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <div class="product-image" data-aos="fade-up" data-aos-delay="300">
+            <a href="images/sl/mermer/crema_Bonica/CREMA_BONICA_3.jpg" data-lightbox="crema-bonica-gallery" data-title="Crema Bonica Mermer - Görünüm 3">
+              <img src="images/sl/mermer/crema_Bonica/CREMA_BONICA_3.jpg" alt="Crema Bonica Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <div class="product-image" data-aos="fade-up" data-aos-delay="400">
+            <a href="images/sl/mermer/crema_Bonica/CREMA_BONICA_4.jpg" data-lightbox="crema-bonica-gallery" data-title="Crema Bonica Mermer - Görünüm 4">
+              <img src="images/sl/mermer/crema_Bonica/CREMA_BONICA_4-4.jpg" alt="Crema Bonica Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Benzer Ürünler</h2>
+          <p class="text-lg text-gray-600">Diğer mermer ve traverten ürünlerimizi keşfedin</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 stagger-animation">
+          <div class="related-product" data-aos="fade-up" data-aos-delay="100">
+            <a href="olivium_grey.html">
+              <img src="images/sl/mermer/olivium_grey.jpg" alt="Olivium Grey" class="w-full h-32 object-cover rounded-lg">
+              <h5 class="text-center mt-3 font-semibold text-gray-800">Olivium Grey</h5>
+            </a>
+          </div>
+          
+          <div class="related-product" data-aos="fade-up" data-aos-delay="200">
+            <a href="crema_bonica.html">
+              <img src="images/sl/mermer/night_thunder.jpg" alt="Crema Bonica" class="w-full h-32 object-cover rounded-lg">
+              <h5 class="text-center mt-3 font-semibold text-gray-800">Crema Bonica</h5>
+            </a>
+          </div>
+          
+          <div class="related-product" data-aos="fade-up" data-aos-delay="300">
+            <a href="da-vinci.html">
+              <img src="images/sl/traverine/da-vinci.jpg" alt="Da Vinci" class="w-full h-32 object-cover rounded-lg">
+              <h5 class="text-center mt-3 font-semibold text-gray-800">Da Vinci</h5>
+            </a>
+          </div>
+          
+          <div class="related-product" data-aos="fade-up" data-aos-delay="400">
+            <a href="yellow.html">
+              <img src="images/sl/traverine/yellow.jpg" alt="Yellow" class="w-full h-32 object-cover rounded-lg">
+              <h5 class="text-center mt-3 font-semibold text-gray-800">Yellow</h5>
+            </a>
+          </div>
+          
+          <div class="related-product" data-aos="fade-up" data-aos-delay="500">
+            <a href="mystic.html">
+              <img src="images/sl/traverine/mystic.jpg" alt="Mystic" class="w-full h-32 object-cover rounded-lg">
+              <h5 class="text-center mt-3 font-semibold text-gray-800">Mystic</h5>
+            </a>
+          </div>
+          
+          <div class="related-product" data-aos="fade-up" data-aos-delay="600">
+            <a href="noche.html">
+              <img src="images/sl/traverine/noche.jpg" alt="Noche" class="w-full h-32 object-cover rounded-lg">
+              <h5 class="text-center mt-3 font-semibold text-gray-800">Noche</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
+      <!-- Marble Background Effect -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800"></div>
+        <div class="absolute inset-0 bg-gray-200"></div>
+      </div>
+      
+      <!-- Animated Decorative Elements -->
+      <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-5 animate-pulse"></div>
+      <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-3 animate-pulse" style="animation-delay: 1s;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div class="group hover:scale-105 transition-all duration-300">
+            <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+              <i class="fas fa-industry text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Fabrika Adresi
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+                <span>Amasya - Çorum Karayolu 25. Km. Organize Sanayi Bölgesi Tahirköse Cad. No: 5 / AMASYA</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-red-500"></i>
+                <span>+903582735056</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-fax text-red-500"></i>
+                <span>+903582735059</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-red-500"></i>
+                <a href="mailto:export@albamar.com.tr" class="hover:text-white transition-colors">export@albamar.com.tr</a>
+              </li>
+            </ul>
+          </div>
+          <div class="group hover:scale-105 transition-all duration-300">
+            <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+              <i class="fas fa-mountain text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Ocak Adresi
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+                <span>Ormanözü Köyü Mevki Turhal / TOKAT</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-red-500"></i>
+                <span>+903582735056</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-fax text-red-500"></i>
+                <span>+903582735059</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-red-500"></i>
+                <a href="mailto:albamar@albamar.com.tr" class="hover:text-white transition-colors">albamar@albamar.com.tr</a>
+              </li>
+            </ul>
+          </div>
+          <div class="group hover:scale-105 transition-all duration-300">
+            <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+              <i class="fas fa-share-alt text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Sosyal Medya
+            </h3>
+            <div>
+              <a href="https://www.linkedin.com/company/albamar-marble/" class="flex items-center space-x-2 hover:text-white transition-colors">
+                <img src="images/in.png" alt="LinkedIn" class="w-45 h-20">
+                <span><br>LinkedIn'de Takip Et</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-6 text-center">
+          <div class="w-32 h-px bg-gray-700 mx-auto mb-4"></div>
+          <p class="text-gray-400">© 2024 Albamar Marble</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true
+      });
+      
+      // Navbar Scroll Effect
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var headerStripHeight = $('#header-strip').outerHeight();
+        
+        if (scroll > 50) {
+          var progress = Math.min(scroll / 100, 1);
+          var translateY = -headerStripHeight * progress;
+          
+          $('#header-strip').css('transform', 'translateY(' + translateY + 'px)');
+          $('#main-header').css('top', (headerStripHeight * (1 - progress)) + 'px');
+        } else {
+          $('#header-strip').css('transform', 'translateY(0)');
+          $('#main-header').css('top', headerStripHeight + 'px');
+        }
+      });
+      
+      // Production Dropdown Menu
+      $('#production-toggle').click(function(e) {
+        e.preventDefault();
+        $('#production-menu').toggleClass('hidden');
+      });
+      
+      // Close dropdown when clicking outside
+      $(document).click(function(e) {
+        if (!$(e.target).closest('#production-dropdown').length) {
+          $('#production-menu').addClass('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

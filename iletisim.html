@@ -1,0 +1,539 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ALBAMAR MERMER - İletişim</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="ALBAMAR MERMER - İletişim bilgileri. Fabrika, ocak ve lojistik merkezlerimizle iletişime geçin.">
+  
+    <!-- Modern Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/iletisimm.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      
+      /* Contact Cards */
+      .contact-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-left: 4px solid #dc2626;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .contact-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+        transition: left 0.5s;
+      }
+      
+      .contact-card:hover::before {
+        left: 100%;
+      }
+      
+      .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Map Container */
+      .map-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      .map-container iframe {
+        transition: all 0.3s ease;
+      }
+      
+      .map-container:hover iframe {
+        transform: scale(1.02);
+      }
+      
+      /* Content Animation */
+      .content-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Stagger Animation */
+      .stagger-animation > * {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: staggerFadeIn 0.6s ease-out forwards;
+      }
+      
+      .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+      .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+      .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+      .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+      .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+      .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+      
+      @keyframes staggerFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Contact Info Icons */
+      .contact-icon {
+        transition: all 0.3s ease;
+      }
+      
+      .contact-card:hover .contact-icon {
+        transform: scale(1.1);
+        color: #dc2626;
+      }
+      
+      /* Turkey Map */
+      .turkey-map {
+        transition: all 0.3s ease;
+        filter: grayscale(20%);
+      }
+      
+      .turkey-map:hover {
+        filter: grayscale(0%);
+        transform: scale(1.02);
+      }
+    </style>
+</head>
+<body class="bg-white">
+  <!-- Header Strip -->
+  <div id="header-strip" class="bg-red-600 text-white py-2 transition-all duration-500 ease-in-out" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <a href="mailto:export@albamar.com.tr" class="text-sm hover:text-gray-200">&#9993; export@albamar.com.tr</a>
+      <div class="flex space-x-4">
+        <a href="index.html"><img src="images/turkey.svg" alt="Türkçe" class="w-8 h-8"></a>
+        <a href="en/contact.html"><img src="images/united-kingdom.svg" alt="English" class="w-8 h-8"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header id="main-header" class="fixed w-full z-20 bg-white shadow-lg transition-all duration-500 ease-in-out" style="top: 40px;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/albamar.svg" alt="Albamar" class="h-16">
+      </div>
+      <nav class="hidden md:flex space-x-8 font-semibold">
+        <a href="index.html" class="hover:text-red-600 transition-colors">Anasayfa</a>
+        <a href="hakkimizda.html" class="hover:text-red-600 transition-colors">Hakkımızda</a>
+        <a href="urunler.html" class="hover:text-red-600 transition-colors">Ürünler</a>
+        <div class="relative" id="production-dropdown">
+          <a href="#" class="hover:text-red-600 transition-colors cursor-pointer" id="production-toggle">Üretim</a>
+          <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 hidden z-50 min-w-[120px]" id="production-menu">
+            <a href="fabrika.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Fabrika</a>
+            <a href="ocak.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Ocak</a>
+          </div>
+        </div>
+        <a href="gallery.html" class="hover:text-red-600 transition-colors">Galeri</a>
+        <a href="iletisim.html" class="hover:text-red-600 transition-colors text-red-600 font-semibold">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section relative h-[60vh] flex items-center justify-center text-white">
+    <div class="text-center content-fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">
+        <span class="text-white">İletişim</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Page Title -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <span class="text-red-600">İLETİŞİM</span> BİLGİLERİ
+        </h2>
+        <div class="w-24 h-1 bg-red-600 mx-auto rounded-full mb-8"></div>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Albamar Mermer'in tüm iletişim bilgileri. Fabrika, ocak ve lojistik merkezlerimizle kolayca iletişime geçebilirsiniz.
+        </p>
+      </div>
+
+      <!-- Contact Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 stagger-animation" data-aos="fade-up">
+        <!-- Fabrika -->
+        <div class="contact-card p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-industry text-red-500 text-2xl mr-3 contact-icon"></i>
+            <h3 class="text-xl font-bold text-gray-800">FABRİKA</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <div>
+                <span class="text-gray-700">Amasya - Çorum Kara Yolu 25. Km.</span>
+                <p class="text-gray-600">Amasya OSB. Tahir Köse Sokak 5 / AMASYA</p>
+              </div>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-red-500"></i>
+              <span class="text-gray-700">+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-fax text-red-500"></i>
+              <span class="text-gray-700">+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:export@albamar.com.tr" class="text-gray-700 hover:text-red-600 transition-colors">export@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ocak -->
+        <div class="contact-card p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-mountain text-red-500 text-2xl mr-3 contact-icon"></i>
+            <h3 class="text-xl font-bold text-gray-800">OCAK</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <div>
+                <span class="text-gray-700">Ormanözü Köyü Mevki</span>
+                <p class="text-gray-600">Turhal / TOKAT</p>
+              </div>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-red-500"></i>
+              <span class="text-gray-700">+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-fax text-red-500"></i>
+              <span class="text-gray-700">+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:albamar@albamar.com.tr" class="text-gray-700 hover:text-red-600 transition-colors">albamar@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Merzifon Havalimanı -->
+        <div class="contact-card p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-plane text-red-500 text-2xl mr-3 contact-icon"></i>
+            <h3 class="text-xl font-bold text-gray-800">MERZİFON HAVALİMANI</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span class="text-gray-700">DHMİ Amasya Merzifon Havalimanı</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-red-500"></i>
+              <span class="text-gray-700">+903585351016/17</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-fax text-red-500"></i>
+              <span class="text-gray-700">+903585351076</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:infomerzifon@dhmi.gov.tr" class="text-gray-700 hover:text-red-600 transition-colors">infomerzifon@dhmi.gov.tr</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Samsun Havalimanı -->
+        <div class="contact-card p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-plane-departure text-red-500 text-2xl mr-3 contact-icon"></i>
+            <h3 class="text-xl font-bold text-gray-800">SAMSUN HAVALİMANI</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <div>
+                <span class="text-gray-700">DHMİ Samsun Çarşamba</span>
+                <p class="text-gray-600">Havalimanı</p>
+              </div>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-red-500"></i>
+              <span class="text-gray-700">+903628448830</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-fax text-red-500"></i>
+              <span class="text-gray-700">+903628448846</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:infocarsamba@dhmi.gov.tr" class="text-gray-700 hover:text-red-600 transition-colors">infocarsamba@dhmi.gov.tr</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Samsun Liman -->
+        <div class="contact-card p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-ship text-red-500 text-2xl mr-3 contact-icon"></i>
+            <h3 class="text-xl font-bold text-gray-800">SAMSUN LİMAN</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <div>
+                <span class="text-gray-700">Kale Mahallesi Sahil Caddesi No: 9</span>
+                <p class="text-gray-600">İlkadım / SAMSUN / TÜRKİYE</p>
+              </div>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-red-500"></i>
+              <div>
+                <span class="text-gray-700">+9003624359013</span>
+                <p class="text-gray-600">4359014-4451590</p>
+              </div>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-fax text-red-500"></i>
+              <span class="text-gray-700">+903624322744-4451635</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:samsun.liman@udhb.gov.tr" class="text-gray-700 hover:text-red-600 transition-colors">samsun.liman@udhb.gov.tr</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mersin Liman -->
+        <div class="contact-card p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-anchor text-red-500 text-2xl mr-3 contact-icon"></i>
+            <h3 class="text-xl font-bold text-gray-800">MERSİN LİMAN</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <div>
+                <span class="text-gray-700">Yenimah 101. Cad 5307. Sok. No:5 33100</span>
+                <p class="text-gray-600">Mersin - TÜRKİYE</p>
+              </div>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-red-500"></i>
+              <span class="text-gray-700">+903242412900</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-fax text-red-500"></i>
+              <span class="text-gray-700">+903242392077</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:info@mersinport.com.tr" class="text-gray-700 hover:text-red-600 transition-colors">info@mersinport.com.tr</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Turkey Map -->
+      <div class="mb-16" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Türkiye Haritası</h3>
+            <img src="images/turkeymap.svg" alt="Türkiye Haritası" class="turkey-map w-full h-auto">
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="mb-16" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Konum Haritası</h3>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/d/embed?mid=1WdWABb2J9d8dGZ24MMoiTDmEQpo&hl=tr" 
+              width="100%" 
+              height="500" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
+    <!-- Marble Background Effect -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800"></div>
+      <div class="absolute inset-0 bg-gray-200"></div>
+    </div>
+    
+    <!-- Animated Decorative Elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-5 animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-3 animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-industry text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Fabrika Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Amasya - Çorum Karayolu 25. Km. Organize Sanayi Bölgesi Tahirköse Cad. No: 5 / AMASYA</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:export@albamar.com.tr" class="hover:text-white transition-colors">export@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-mountain text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Ocak Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Ormanözü Köyü Mevki Turhal / TOKAT</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:albamar@albamar.com.tr" class="hover:text-white transition-colors">albamar@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-share-alt text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Sosyal Medya
+          </h3>
+          <div>
+            <a href="https://www.linkedin.com/company/albamar-marble/" class="flex items-center space-x-2 hover:text-white transition-colors">
+              <img src="images/in.png" alt="LinkedIn" class="w-10 h-10">
+              <span>LinkedIn'de Takip Et</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-6 text-center">
+        <div class="w-32 h-px bg-gray-700 mx-auto mb-4"></div>
+        <p class="text-gray-400">© 2024 Albamar Marble - Modern Tasarım</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // AOS Initialization
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true
+    });
+    
+    // Navbar Scroll Effect
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      var headerStripHeight = $('#header-strip').outerHeight();
+      
+      if (scroll > 50) {
+        var progress = Math.min(scroll / 100, 1);
+        var translateY = -headerStripHeight * progress;
+        
+        $('#header-strip').css('transform', 'translateY(' + translateY + 'px)');
+        $('#main-header').css('top', (headerStripHeight * (1 - progress)) + 'px');
+      } else {
+        $('#header-strip').css('transform', 'translateY(0)');
+        $('#main-header').css('top', headerStripHeight + 'px');
+      }
+    });
+    
+    // Production Dropdown Menu
+    $('#production-toggle').click(function(e) {
+      e.preventDefault();
+      $('#production-menu').toggleClass('hidden');
+    });
+    
+    // Close dropdown when clicking outside
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#production-dropdown').length) {
+        $('#production-menu').addClass('hidden');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    $('a[href^="#"]').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 100
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

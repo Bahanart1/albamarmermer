@@ -1,0 +1,558 @@
+<head>
+    <title>ALBAMAR MERMER - Modern Tasarım</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="ALBAMAR MERMER MADENCİLİK - Doğanın eşsiz hazinesi modern tasarımla.">
+  
+    <!-- Modern Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- LeoSlider CSS -->
+    <link rel="stylesheet" href="css/leoslider.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      /* Simple Image Slider */
+      section {
+        height: 80vh !important;
+      }
+      
+      #image-slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .slider-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .slider-image.active {
+        opacity: 1;
+      }
+      
+      /* Arrow Animation */
+      @keyframes arrowBounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(8px);
+        }
+      }
+      
+      .arrow-bounce {
+        animation: arrowBounce 2s ease-in-out infinite;
+      }
+      
+      /* Swiper Navigation Arrows */
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #B60E0C !important;
+        background: rgba(255, 255, 255, 0.9);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      /* Product Card Hover Effects */
+      .swiper-slide .bg-white {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        overflow: hidden;
+      }
+      
+      .swiper-slide .bg-white:hover {
+        transform: translateY(-10px) scale(1.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+      }
+      
+      .swiper-slide .bg-white:hover img {
+        transform: scale(1.05);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .swiper-slide .bg-white:hover h5 {
+        color: #B60E0C;
+        transition: color 0.4s ease;
+      }
+      
+      /* Pagination Color */
+      .swiper-pagination-bullet {
+        background: #B60E0C !important;
+      }
+      
+      .swiper-pagination-bullet-active {
+        background: #B60E0C !important;
+      }
+
+      /* Adjust Swiper Pagination Position */
+      .swiper-pagination {
+        bottom: 150px !important; /* Increase spacing so dots sit closer to the slider */
+      }
+    </style>
+      
+
+    </style>
+    </style>
+      
+
+    </style>
+
+  </head>
+  <!-- Header Strip -->
+  <div id="header-strip" class="bg-red-600 text-white py-2 transition-all duration-500 ease-in-out" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <a href="mailto:export@albamar.com.tr" class="text-sm hover:text-gray-200">&#9993; export@albamar.com.tr</a>
+      <div class="flex space-x-4">
+        <a href="index.html"><img src="images/turkey.svg" alt="Türkçe" class="w-8 h-8"></a>
+        <a href="en/index.html"><img src="images/united-kingdom.svg" alt="English" class="w-8 h-8"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header id="main-header" class="fixed w-full z-20 bg-white shadow-lg transition-all duration-500 ease-in-out" style="top: 40px;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/albamar.svg" alt="Albamar" class="h-16">
+      </div>
+      <nav class="hidden md:flex space-x-8 font-semibold">
+        <a href="index.html" class="hover:text-red-600 transition-colors">Anasayfa</a>
+        <a href="hakkimizda.html" class="hover:text-red-600 transition-colors">Hakkımızda</a>
+        <a href="urunler.html" class="hover:text-red-600 transition-colors">Ürünler</a>
+        <div class="relative" id="production-dropdown">
+          <a href="#" class="hover:text-red-600 transition-colors cursor-pointer" id="production-toggle">Üretim</a>
+          <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 hidden z-50 min-w-[120px]" id="production-menu">
+            <a href="fabrika.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Fabrika</a>
+            <a href="ocak.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Ocak</a>
+          </div>
+        </div>
+        <a href="gallery.html" class="hover:text-red-600 transition-colors">Galeri</a>
+        <a href="iletisim.html" class="hover:text-red-600 transition-colors">İletişim</a>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="relative h-[10vh] overflow-hidden">
+    <div id="image-slider" class="w-full h-full">
+      <img src="images/1.jpg" alt="Albamar Mermer" class="slider-image active" />
+      <img src="images/2.jpg" alt="Albamar Mermer" class="slider-image" />
+      <img src="images/5.jpg" alt="Albamar Mermer" class="slider-image" />
+      <img src="images/6.jpg" alt="Albamar Mermer" class="slider-image" />
+      <img src="images/3.jpg" alt="Albamar Mermer" class="slider-image" />
+      <img src="images/4.jpg" alt="Albamar Mermer" class="slider-image" />
+    </div>
+  </section>
+
+
+  <section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <!-- Background Pattern -->
+          <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0 bg-gray-200"></div>
+      </div>
+    
+    <!-- Decorative Elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-30 flex items-center justify-center">
+      <i class="fas fa-chevron-down text-white text-lg arrow-bounce"></i>
+    </div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-5"></div>
+    
+    <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
+      <!-- Welcome Badge -->
+      
+      <!-- Main Title -->
+      <h2 class="text-5xl font-bold mb-3">
+        <span class="text-gray-800">Albamar Mermere</span>
+        <span class="text-red-600 ml-4">Hoşgeldiniz</span>
+      </h2>
+      
+      <!-- Description with Icon -->
+      <div class="max-w-4xl mx-auto mb-10">
+        <div class="flex items-center justify-center mb-6">
+          <div class="w-16 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full mr-4"></div>
+          <i class="fas fa-gem text-red-600 text-2xl"></i>
+          <div class="w-16 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full ml-4"></div>
+        </div>
+        <p class="text-lg text-gray-700 leading-relaxed">Mermer, doğanın milyonlarca yıllık birikiminin sonunda insanoğluna sunduğu eşsiz bir hazinedir. Bu kıymetli hazineyi, uzman kadromuz ve ileri teknoloji makina parkımız ile siz değerli müşterilerimizin yaşam kalitesini artırmak öncellikli hedefimizdir.</p>
+      </div>
+      
+      <!-- Action Button -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <a href="hakkimizda.html" class="group relative px-8 py-4 bg-red-600 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-red-700 transition-all duration-300 overflow-hidden transform hover:scale-110">
+          <span class="relative z-10 font-semibold">Hakkımızda</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-red-700 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+          <div class="absolute -inset-1 bg-gradient-to-r from-red-400 to-red-600 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
+        </a>
+        <a href="urunler.html" class="group px-8 py-4 border-2 border-red-600 text-red-600 rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 hover:scale-105 font-semibold">
+          <i class="fas fa-eye mr-2"></i>Ürünlerimizi İnceleyin
+        </a>
+      </div>
+      
+      <!-- Statistics Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border-l-4 border-red-600">
+          <div class="text-3xl font-bold text-red-600 mb-2 counter" data-target="170">0</div>
+          <div class="text-sm text-gray-600 font-semibold">Uzman Personel</div>
+          <i class="fas fa-users text-gray-400 mt-3 text-xl"></i>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border-l-4 border-red-600">
+          <div class="text-3xl font-bold text-red-600 mb-2 counter" data-target="2011">0</div>
+          <div class="text-sm text-gray-600 font-semibold">Kuruluş Yılı</div>
+          <i class="fas fa-calendar-alt text-gray-400 mt-3 text-xl"></i>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border-l-4 border-red-600">
+          <div class="text-3xl font-bold text-red-600 mb-2 counter" data-target="50">0</div>
+          <div class="text-sm text-gray-600 font-semibold">Ülkeye İhracat</div>
+          <i class="fas fa-globe text-gray-400 mt-3 text-xl"></i>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 border-l-4 border-red-600">
+          <div class="text-3xl font-bold text-red-600 mb-2 counter" data-target="100">0</div>
+          <div class="text-sm text-gray-600 font-semibold">Müşteri Memnuniyeti</div>
+          <i class="fas fa-heart text-gray-400 mt-3 text-xl"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-10">Ürün Koleksiyonumuz</h2>
+      <div class="swiper mySwiper relative">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="regal.html">
+                <img src="images/sl/mermer/regal.jpg" class="w-full h-64 object-cover" alt="Alba Beige">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Alba Beige</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="ruby.html">
+                <img src="images/sl/mermer/ruby1.jpg" class="w-full h-64 object-cover" alt="Ruby">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Ruby</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="sapphire.html">
+                <img src="images/sl/mermer/sapphire1.jpg" class="w-full h-64 object-cover" alt="Sapphire">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Sapphire</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="olivium_grey.html">
+                <img src="images/sl/mermer/olivium_grey.jpg" class="w-full h-64 object-cover" alt="Olivium Grey">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Olivium Grey</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="crema_bonica.html">
+                <img src="images/sl/mermer/night_thunder.jpg" class="w-full h-64 object-cover" alt="Crema Bonica">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Crema Bonica</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="da-vinci.html">
+                <img src="images/sl/traverine/da-vinci.jpg" class="w-full h-64 object-cover" alt="Da Vinci">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Da Vinci</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="yellow.html">
+                <img src="images/sl/traverine/yellow.jpg" class="w-full h-64 object-cover" alt="Yellow">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Yellow</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="mystic.html">
+                <img src="images/sl/traverine/mystic.jpg" class="w-full h-64 object-cover" alt="Mystic">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Mystic</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href="noche.html">
+                <img src="images/sl/traverine/noche.jpg" class="w-full h-64 object-cover" alt="Noche">
+                <div class="p-4">
+                  <h5 class="font-bold text-lg text-gray-800">Noche</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <!-- Navigation Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
+    <!-- Marble Background Effect -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800"></div>
+      <div class="absolute inset-0 bg-gray-200"></div>
+    </div>
+    
+    <!-- Animated Decorative Elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-5 animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-3 animate-pulse" style="animation-delay: 1s;"></div>
+          <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-industry text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Fabrika Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Amasya - Çorum Karayolu 25. Km. Organize Sanayi Bölgesi Tahirköse Cad. No: 5 / AMASYA</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:export@albamar.com.tr" class="hover:text-white transition-colors">export@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-mountain text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Ocak Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Ormanözü Köyü Mevki Turhal / TOKAT</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:albamar@albamar.com.tr" class="hover:text-white transition-colors">albamar@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-share-alt text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Sosyal Medya
+          </h3>
+          <div>
+                         <a href="https://www.linkedin.com/company/albamar-marble/" class="flex items-center space-x-2 hover:text-white transition-colors">
+               <img src="images/in.png" alt="LinkedIn" class="w-45 h-20">
+               <span><br>LinkedIn'de Takip Et</span>
+             </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6 text-center">
+        <div class="w-32 h-px bg-gray-700 mx-auto mb-4"></div>
+        <p class="text-gray-400">© 2024 Albamar Marble</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  
+
+  
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script>
+    // AOS Initialization
+    AOS.init();
+    
+    // Simple Image Slider
+    $(document).ready(function() {
+      var currentImage = 0;
+      var images = $('.slider-image');
+      var totalImages = images.length;
+      
+      function nextImage() {
+        // Hide current image
+        images.eq(currentImage).removeClass('active');
+        
+        // Move to next image
+        currentImage = (currentImage + 1) % totalImages;
+        
+        // Show new image
+        images.eq(currentImage).addClass('active');
+      }
+      
+      // Auto-advance images every 3 seconds
+      setInterval(nextImage, 3000);
+    });
+    
+    // Navbar Scroll Effect
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      var headerStripHeight = $('#header-strip').outerHeight();
+      
+      if (scroll > 50) {
+        // Mail kısmını yavaşça yukarı çek (kaybolsun)
+        var progress = Math.min(scroll / 100, 1);
+        var translateY = -headerStripHeight * progress;
+        
+        $('#header-strip').css('transform', 'translateY(' + translateY + 'px)');
+        $('#main-header').css('top', (headerStripHeight * (1 - progress)) + 'px');
+      } else {
+        // Başlangıç pozisyonuna dön
+        $('#header-strip').css('transform', 'translateY(0)');
+        $('#main-header').css('top', headerStripHeight + 'px');
+      }
+    });
+    
+    // Swiper Initialization
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: { delay: 2500 },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+  });
+  
+  // Counter Animation
+  function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16); // 60fps
+    
+    function updateCounter() {
+      start += increment;
+      if (start < target) {
+        element.textContent = Math.floor(start);
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    }
+    
+    updateCounter();
+  }
+  
+  // Intersection Observer for counter animation
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+  };
+  
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-target'));
+        animateCounter(counter, target);
+        counterObserver.unobserve(counter); // Only animate once
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all counter elements
+  document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      counterObserver.observe(counter);
+    });
+  });
+  
+  // Production Dropdown Menu
+  $('#production-toggle').click(function(e) {
+    e.preventDefault();
+    $('#production-menu').toggleClass('hidden');
+  });
+  
+  // Close dropdown when clicking outside
+  $(document).click(function(e) {
+    if (!$(e.target).closest('#production-dropdown').length) {
+      $('#production-menu').addClass('hidden');
+    }
+  });
+</script>

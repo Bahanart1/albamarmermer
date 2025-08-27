@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ALBAMAR MERMER - Galeri</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="ALBAMAR MERMER - Mermer ürünlerimizin galerisi. Modern tasarım ve kaliteli mermer çözümleri.">
+  
+    <!-- Modern Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="css/lightbox.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/galerii.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      
+      /* Gallery Grid */
+      .gallery-grid {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+        cursor: pointer;
+      }
+      
+      .gallery-grid:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      
+      .gallery-grid img {
+        transition: all 0.5s ease;
+      }
+      
+      .gallery-grid:hover img {
+        transform: scale(1.15);
+      }
+      
+      /* Gallery Overlay */
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(220, 38, 38, 0.8), rgba(0, 0, 0, 0.6));
+        opacity: 0;
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .gallery-grid:hover .gallery-overlay {
+        opacity: 1;
+      }
+      
+      .gallery-overlay i {
+        color: white;
+        font-size: 2rem;
+        transform: scale(0);
+        transition: all 0.3s ease;
+      }
+      
+      .gallery-grid:hover .gallery-overlay i {
+        transform: scale(1);
+      }
+      
+      /* Content Animation */
+      .content-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Stagger Animation */
+      .stagger-animation > * {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: staggerFadeIn 0.6s ease-out forwards;
+      }
+      
+      .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+      .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+      .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+      .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+      .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+      .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+      .stagger-animation > *:nth-child(7) { animation-delay: 0.7s; }
+      .stagger-animation > *:nth-child(8) { animation-delay: 0.8s; }
+      .stagger-animation > *:nth-child(9) { animation-delay: 0.9s; }
+      .stagger-animation > *:nth-child(10) { animation-delay: 1.0s; }
+      .stagger-animation > *:nth-child(11) { animation-delay: 1.1s; }
+      .stagger-animation > *:nth-child(12) { animation-delay: 1.2s; }
+      .stagger-animation > *:nth-child(13) { animation-delay: 1.3s; }
+      .stagger-animation > *:nth-child(14) { animation-delay: 1.4s; }
+      .stagger-animation > *:nth-child(15) { animation-delay: 1.5s; }
+      .stagger-animation > *:nth-child(16) { animation-delay: 1.6s; }
+      .stagger-animation > *:nth-child(17) { animation-delay: 1.7s; }
+      .stagger-animation > *:nth-child(18) { animation-delay: 1.8s; }
+      .stagger-animation > *:nth-child(19) { animation-delay: 1.9s; }
+      .stagger-animation > *:nth-child(20) { animation-delay: 2.0s; }
+      .stagger-animation > *:nth-child(21) { animation-delay: 2.1s; }
+      .stagger-animation > *:nth-child(22) { animation-delay: 2.2s; }
+      .stagger-animation > *:nth-child(23) { animation-delay: 2.3s; }
+      .stagger-animation > *:nth-child(24) { animation-delay: 2.4s; }
+      
+      @keyframes staggerFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Filter Buttons */
+      .filter-btn {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .filter-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+      
+      .filter-btn:hover::before {
+        left: 100%;
+      }
+      
+      .filter-btn.active {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+      }
+    </style>
+</head>
+<body class="bg-white">
+  <!-- Header Strip -->
+  <div id="header-strip" class="bg-red-600 text-white py-2 transition-all duration-500 ease-in-out" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <a href="mailto:export@albamar.com.tr" class="text-sm hover:text-gray-200">&#9993; export@albamar.com.tr</a>
+      <div class="flex space-x-4">
+        <a href="index.html"><img src="images/turkey.svg" alt="Türkçe" class="w-8 h-8"></a>
+        <a href="en/gallery.html"><img src="images/united-kingdom.svg" alt="English" class="w-8 h-8"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header id="main-header" class="fixed w-full z-20 bg-white shadow-lg transition-all duration-500 ease-in-out" style="top: 40px;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/albamar.svg" alt="Albamar" class="h-16">
+      </div>
+      <nav class="hidden md:flex space-x-8 font-semibold">
+        <a href="index.html" class="hover:text-red-600 transition-colors">Anasayfa</a>
+        <a href="hakkimizda.html" class="hover:text-red-600 transition-colors">Hakkımızda</a>
+        <a href="urunler.html" class="hover:text-red-600 transition-colors">Ürünler</a>
+        <div class="relative" id="production-dropdown">
+          <a href="#" class="hover:text-red-600 transition-colors cursor-pointer" id="production-toggle">Üretim</a>
+          <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 hidden z-50 min-w-[120px]" id="production-menu">
+            <a href="fabrika.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Fabrika</a>
+            <a href="ocak.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Ocak</a>
+          </div>
+        </div>
+        <a href="gallery.html" class="hover:text-red-600 transition-colors text-red-600 font-semibold">Galeri</a>
+        <a href="iletisim.html" class="hover:text-red-600 transition-colors">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section relative h-[60vh] flex items-center justify-center text-white">
+    <div class="text-center content-fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">
+        <span class="text-white">Galeri</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Page Title -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <span class="text-red-600">GALERİ</span>
+        </h2>
+        <div class="w-24 h-1 bg-red-600 mx-auto rounded-full mb-8"></div>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Albamar Mermer'in kaliteli ürünlerinin görsel galerisi. Modern tasarım ve doğal güzellik bir arada.
+        </p>
+      </div>
+
+      <!-- Gallery Filter Buttons -->
+      <div class="flex justify-center mb-12" data-aos="fade-up">
+        <div class="flex flex-wrap gap-4">
+          <button class="filter-btn active px-6 py-3 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition-all duration-300" data-filter="all">
+            Tümü
+          </button>
+          <button class="filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="mermer">
+            Mermer
+          </button>
+          <button class="filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="traverten">
+            Traverten
+          </button>
+          <button class="filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="uretim">
+            Üretim
+          </button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 stagger-animation" data-aos="fade-up">
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/1.JPG" data-lightbox="gallery" data-title="Mermer Ürün 1">
+            <img src="images/galeri/1.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/2.JPG" data-lightbox="gallery" data-title="Traverten Ürün 1">
+            <img src="images/galeri/2.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/3.JPG" data-lightbox="gallery" data-title="Üretim Süreci 1">
+            <img src="images/galeri/3.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/4.JPG" data-lightbox="gallery" data-title="Mermer Ürün 2">
+            <img src="images/galeri/4.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/5.JPG" data-lightbox="gallery" data-title="Traverten Ürün 2">
+            <img src="images/galeri/5.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/6.JPG" data-lightbox="gallery" data-title="Üretim Süreci 2">
+            <img src="images/galeri/6.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/7.JPG" data-lightbox="gallery" data-title="Mermer Ürün 3">
+            <img src="images/galeri/7.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/8.JPG" data-lightbox="gallery" data-title="Traverten Ürün 3">
+            <img src="images/galeri/8.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/9.JPG" data-lightbox="gallery" data-title="Üretim Süreci 3">
+            <img src="images/galeri/9.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/10.JPG" data-lightbox="gallery" data-title="Mermer Ürün 4">
+            <img src="images/galeri/10.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/11.JPG" data-lightbox="gallery" data-title="Traverten Ürün 4">
+            <img src="images/galeri/11.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/12.JPG" data-lightbox="gallery" data-title="Üretim Süreci 4">
+            <img src="images/galeri/12.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/13.JPG" data-lightbox="gallery" data-title="Mermer Ürün 5">
+            <img src="images/galeri/13.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/14.JPG" data-lightbox="gallery" data-title="Traverten Ürün 5">
+            <img src="images/galeri/14.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/15.JPG" data-lightbox="gallery" data-title="Üretim Süreci 5">
+            <img src="images/galeri/15.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/16.JPG" data-lightbox="gallery" data-title="Mermer Ürün 6">
+            <img src="images/galeri/16.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/17.JPG" data-lightbox="gallery" data-title="Traverten Ürün 6">
+            <img src="images/galeri/17.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/18.JPG" data-lightbox="gallery" data-title="Üretim Süreci 6">
+            <img src="images/galeri/18.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/19.JPG" data-lightbox="gallery" data-title="Mermer Ürün 7">
+            <img src="images/galeri/19.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/20.JPG" data-lightbox="gallery" data-title="Traverten Ürün 7">
+            <img src="images/galeri/20.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/21.JPG" data-lightbox="gallery" data-title="Üretim Süreci 7">
+            <img src="images/galeri/21.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="mermer">
+          <a href="images/galeri/22.JPG" data-lightbox="gallery" data-title="Mermer Ürün 8">
+            <img src="images/galeri/22.JPG" alt="Mermer Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="traverten">
+          <a href="images/galeri/23.JPG" data-lightbox="gallery" data-title="Traverten Ürün 8">
+            <img src="images/galeri/23.JPG" alt="Traverten Ürün" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+        <div class="gallery-grid" data-category="uretim">
+          <a href="images/galeri/24.JPG" data-lightbox="gallery" data-title="Üretim Süreci 8">
+            <img src="images/galeri/24.JPG" alt="Üretim Süreci" class="w-full h-64 object-cover">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
+    <!-- Marble Background Effect -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800"></div>
+      <div class="absolute inset-0 bg-gray-200"></div>
+    </div>
+    
+    <!-- Animated Decorative Elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-5 animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-3 animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-industry text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Fabrika Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Amasya - Çorum Karayolu 25. Km. Organize Sanayi Bölgesi Tahirköse Cad. No: 5 / AMASYA</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:export@albamar.com.tr" class="hover:text-white transition-colors">export@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-mountain text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Ocak Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Ormanözü Köyü Mevki Turhal / TOKAT</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:albamar@albamar.com.tr" class="hover:text-white transition-colors">albamar@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-share-alt text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Sosyal Medya
+          </h3>
+          <div>
+            <a href="https://www.linkedin.com/company/albamar-marble/" class="flex items-center space-x-2 hover:text-white transition-colors">
+              <img src="images/in.png" alt="LinkedIn" class="w-10 h-10">
+              <span>LinkedIn'de Takip Et</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-6 text-center">
+        <div class="w-32 h-px bg-gray-700 mx-auto mb-4"></div>
+        <p class="text-gray-400">© 2024 Albamar Marble - Modern Tasarım</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Lightbox -->
+  <script src="js/lightbox-plus-jquery.min.js"></script>
+  
+  <script>
+    // AOS Initialization
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true
+    });
+    
+    // Navbar Scroll Effect
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      var headerStripHeight = $('#header-strip').outerHeight();
+      
+      if (scroll > 50) {
+        var progress = Math.min(scroll / 100, 1);
+        var translateY = -headerStripHeight * progress;
+        
+        $('#header-strip').css('transform', 'translateY(' + translateY + 'px)');
+        $('#main-header').css('top', (headerStripHeight * (1 - progress)) + 'px');
+      } else {
+        $('#header-strip').css('transform', 'translateY(0)');
+        $('#main-header').css('top', headerStripHeight + 'px');
+      }
+    });
+    
+    // Production Dropdown Menu
+    $('#production-toggle').click(function(e) {
+      e.preventDefault();
+      $('#production-menu').toggleClass('hidden');
+    });
+    
+    // Close dropdown when clicking outside
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#production-dropdown').length) {
+        $('#production-menu').addClass('hidden');
+      }
+    });
+    
+    // Gallery Filter Functionality
+    $('.filter-btn').click(function() {
+      var filter = $(this).data('filter');
+      
+      // Update active button
+      $('.filter-btn').removeClass('active').addClass('bg-gray-200 text-gray-700').removeClass('bg-red-600 text-white');
+      $(this).addClass('active bg-red-600 text-white').removeClass('bg-gray-200 text-gray-700');
+      
+      // Filter gallery items
+      if (filter === 'all') {
+        $('.gallery-grid').fadeIn(400);
+      } else {
+        $('.gallery-grid').hide();
+        $('.gallery-grid[data-category="' + filter + '"]').fadeIn(400);
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    $('a[href^="#"]').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 100
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

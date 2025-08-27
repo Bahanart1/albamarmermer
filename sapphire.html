@@ -1,0 +1,551 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ALBAMAR MERMER - Sapphire</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="ALBAMAR MERMER - Sapphire mermer ürünü. Yüksek kaliteli doğal mermer ürünlerimizi keşfedin.">
+  
+    <!-- Modern Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="css/lightbox.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      /* Product Image */
+      .product-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+      }
+      
+      .product-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      }
+      
+      .product-image img {
+        transition: all 0.4s ease;
+      }
+      
+      .product-image:hover img {
+        transform: scale(1.05);
+      }
+      
+      /* Modern Table */
+      .modern-table {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+      
+      .modern-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .modern-table th {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+        padding: 20px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 16px;
+      }
+      
+      .modern-table td {
+        padding: 18px 20px;
+        border-bottom: 1px solid #f3f4f6;
+        font-size: 15px;
+      }
+      
+      .modern-table tr:nth-child(even) {
+        background-color: #f9fafb;
+      }
+      
+      .modern-table tr:hover {
+        background-color: #fef2f2;
+        transition: all 0.3s ease;
+      }
+      
+      /* Stagger Animation */
+      .stagger-animation tr {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+      
+      .stagger-animation tr:nth-child(1) { animation-delay: 0.1s; }
+      .stagger-animation tr:nth-child(2) { animation-delay: 0.2s; }
+      .stagger-animation tr:nth-child(3) { animation-delay: 0.3s; }
+      .stagger-animation tr:nth-child(4) { animation-delay: 0.4s; }
+      .stagger-animation tr:nth-child(5) { animation-delay: 0.5s; }
+      .stagger-animation tr:nth-child(6) { animation-delay: 0.6s; }
+      .stagger-animation tr:nth-child(7) { animation-delay: 0.7s; }
+      .stagger-animation tr:nth-child(8) { animation-delay: 0.8s; }
+      .stagger-animation tr:nth-child(9) { animation-delay: 0.9s; }
+      .stagger-animation tr:nth-child(10) { animation-delay: 1.0s; }
+      .stagger-animation tr:nth-child(11) { animation-delay: 1.1s; }
+      .stagger-animation tr:nth-child(12) { animation-delay: 1.2s; }
+      .stagger-animation tr:nth-child(13) { animation-delay: 1.3s; }
+      .stagger-animation tr:nth-child(14) { animation-delay: 1.4s; }
+      .stagger-animation tr:nth-child(15) { animation-delay: 1.5s; }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Related Products */
+      .related-product {
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      
+      .related-product:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+      
+      .related-product img {
+        transition: all 0.3s ease;
+      }
+      
+      .related-product:hover img {
+        transform: scale(1.1);
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Strip -->
+    <div id="header-strip" class="bg-red-600 text-white py-2 transition-all duration-500 ease-in-out" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <a href="mailto:export@albamar.com.tr" class="flex items-center space-x-2 hover:text-red-200 transition-colors">
+            <i class="fas fa-envelope"></i>
+            <span>export@albamar.com.tr</span>
+          </a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <a href="sapphire.html" class="hover:opacity-80 transition-opacity">
+            <img src="images/turkey.svg" alt="Türkçe" class="w-8 h-8">
+          </a>
+          <a href="en/sapphire.html" class="hover:opacity-80 transition-opacity">
+            <img src="images/united-kingdom.svg" alt="English" class="w-8 h-8">
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header id="main-header" class="fixed w-full z-20 bg-white shadow-lg transition-all duration-500 ease-in-out" style="top: 40px;">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="index.html" class="flex items-center">
+              <img src="images/albamar.svg" alt="Albamar Mermer" class="h-12">
+            </a>
+          </div>
+          
+          <!-- Navigation -->
+          <nav class="hidden md:flex space-x-8">
+            <a href="index.html" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Anasayfa</a>
+            <a href="hakkimizda.html" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Hakkımızda</a>
+            <a href="urunler.html" class="text-red-600 font-medium">Ürünler</a>
+            
+            <!-- Production Dropdown -->
+            <div id="production-dropdown" class="relative">
+              <button id="production-toggle" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium flex items-center">
+                Üretim
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+              </button>
+              <div id="production-menu" class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 hidden">
+                <a href="fabrika.html" class="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">Fabrika</a>
+                <a href="ocak.html" class="block px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">Ocak</a>
+              </div>
+            </div>
+            
+            <a href="gallery.html" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Galeri</a>
+            <a href="iletisim.html" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">İletişim</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button class="text-gray-700 hover:text-red-600 transition-colors">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Product Details -->
+    <section id="product-details" class="pt-44 pb-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <!-- Product Image -->
+          <div class="product-image" data-aos="fade-right">
+            <img src="images/sl/mermer/sapphire1.jpg" alt="Sapphire Mermer" class="w-full h-96 object-cover rounded-lg shadow-lg">
+          </div>
+          
+          <!-- Product Information -->
+          <div class="space-y-6" data-aos="fade-left">
+            <div>
+              <h1 class="text-4xl font-bold text-gray-800 mb-4">Sapphire</h1>
+              <p class="text-lg text-gray-600 leading-relaxed">
+                Sapphire mermeri, doğanın en değerli taşlarından biri olan safir taşının rengini yansıtan, 
+                derin mavi tonlarıyla göz alıcı bir mermer türüdür. Bu eşsiz mermer, lüks iç mekan tasarımlarında 
+                ve özel projelerde tercih edilen premium bir malzemedir.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Renk</h3>
+                <p class="text-gray-600">Derin Mavi</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Doku</h3>
+                <p class="text-gray-600">Pürüzsüz</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Kullanım Alanı</h3>
+                <p class="text-gray-600">İç Mekan</p>
+              </div>
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Kalite</h3>
+                <p class="text-gray-600">Premium</p>
+              </div>
+            </div>
+            
+            <div class="flex space-x-4">
+              <a href="#technical-specs" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-info-circle mr-2"></i>Teknik Özellikler
+              </a>
+              <a href="#gallery" class="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-images mr-2"></i>Galeri
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section id="technical-specs" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Teknik Özellikler</h2>
+          <p class="text-lg text-gray-600">Sapphire mermerinin detaylı teknik özellikleri</p>
+        </div>
+        
+        <div class="modern-table" data-aos="fade-up" data-aos-delay="200">
+          <table class="w-full">
+            <thead>
+              <tr>
+                <th width="8%">NO</th>
+                <th width="60%">Mermer Özellikleri</th>
+                <th width="32%">Oranlar</th>
+              </tr>
+            </thead>
+            <tbody class="stagger-animation">
+              <tr>
+                <td>1</td>
+                <td>Sertlik (Mosh):</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Nokta yükü dayanımı (kgf/cm²):</td>
+                <td>57,59</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Poisson oranı:</td>
+                <td>0,316</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Elastisite modülü (GPa):</td>
+                <td>35,37</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>İçsel sürtünme açısı (°):</td>
+                <td>49,73</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Kohezyon (kgf/cm²):</td>
+                <td>202,24</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Tek eksenli basınç dayanımı (kgf/cm²):</td>
+                <td>933,74</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Eğilme dayanımı (kgf/cm²):</td>
+                <td>141,28</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Dolaylı çekme dayanımı (kgf/cm²):</td>
+                <td>74,10</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Darbe dayanımı (kgf/cm²):</td>
+                <td>3,44</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Suya dayanım indeksi:</td>
+                <td>%99,75</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Nem oranı:</td>
+                <td>%0,109</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Gözeneklilik:</td>
+                <td>%0,195</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Özgül ağırlık:</td>
+                <td>%2,695</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Doluluk oranı:</td>
+                <td>%99,80</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section id="gallery" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Ürün Galerisi</h2>
+          <p class="text-lg text-gray-600">Sapphire mermerinin farklı açılardan görünümleri</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 stagger-animation">
+          <div class="product-image" data-aos="fade-up" data-aos-delay="100">
+            <a href="images/sl/mermer/sapphire/1.JPG" data-lightbox="sapphire-gallery" data-title="Sapphire Mermer - Görünüm 1">
+              <img src="images/sl/mermer/sapphire/1.JPG" alt="Sapphire Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <div class="product-image" data-aos="fade-up" data-aos-delay="200">
+            <a href="images/sl/mermer/sapphire/2.JPG" data-lightbox="sapphire-gallery" data-title="Sapphire Mermer - Görünüm 2">
+              <img src="images/sl/mermer/sapphire/2.JPG" alt="Sapphire Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <div class="product-image" data-aos="fade-up" data-aos-delay="300">
+            <a href="images/sl/mermer/sapphire/3.jpg" data-lightbox="sapphire-gallery" data-title="Sapphire Mermer - Görünüm 3">
+              <img src="images/sl/mermer/sapphire/3.jpg" alt="Sapphire Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+          
+          <div class="product-image" data-aos="fade-up" data-aos-delay="400">
+            <a href="images/sl/mermer/sapphire/4.jpg" data-lightbox="sapphire-gallery" data-title="Sapphire Mermer - Görünüm 4">
+              <img src="images/sl/mermer/sapphire/4.jpg" alt="Sapphire Mermer" class="w-full h-48 object-cover rounded-lg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Benzer Ürünler</h2>
+          <p class="text-lg text-gray-600">Diğer premium mermer ürünlerimizi keşfedin</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="related-product bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <a href="crema_bonica.html">
+              <img src="images/sl/mermer/crema_Bonica/CREMA_BONICA_1-1.jpg" alt="Crema Bonica" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Crema Bonica</h3>
+                <p class="text-gray-600">Krem tonlarında zarif mermer</p>
+              </div>
+            </a>
+          </div>
+          
+          <div class="related-product bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <a href="ruby.html">
+              <img src="images/sl/mermer/ruby/1.jpg" alt="Ruby" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Ruby</h3>
+                <p class="text-gray-600">Kırmızı tonlarında canlı mermer</p>
+              </div>
+            </a>
+          </div>
+          
+          <div class="related-product bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <a href="night_thunder.html">
+              <img src="images/sl/mermer/night_thunder/1.jpg" alt="Night Thunder" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Night Thunder</h3>
+                <p class="text-gray-600">Siyah tonlarında etkileyici mermer</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
+      <!-- Marble Background Effect -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800"></div>
+        <div class="absolute inset-0 bg-gray-200"></div>
+      </div>
+      
+      <!-- Animated Decorative Elements -->
+      <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-5 animate-pulse"></div>
+      <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-3 animate-pulse" style="animation-delay: 1s;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div class="group hover:scale-105 transition-all duration-300">
+            <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+              <i class="fas fa-industry text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Fabrika Adresi
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+                <span>Amasya - Çorum Karayolu 25. Km. Organize Sanayi Bölgesi Tahirköse Cad. No: 5 / AMASYA</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-red-500"></i>
+                <span>+903582735056</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-fax text-red-500"></i>
+                <span>+903582735059</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-red-500"></i>
+                <a href="mailto:export@albamar.com.tr" class="hover:text-white transition-colors">export@albamar.com.tr</a>
+              </li>
+            </ul>
+          </div>
+          <div class="group hover:scale-105 transition-all duration-300">
+            <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+              <i class="fas fa-mountain text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Ocak Adresi
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+                <span>Ormanözü Köyü Mevki Turhal / TOKAT</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-phone text-red-500"></i>
+                <span>+903582735056</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-fax text-red-500"></i>
+                <span>+903582735059</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-envelope text-red-500"></i>
+                <a href="mailto:albamar@albamar.com.tr" class="hover:text-white transition-colors">albamar@albamar.com.tr</a>
+              </li>
+            </ul>
+          </div>
+          <div class="group hover:scale-105 transition-all duration-300">
+            <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+              <i class="fas fa-share-alt text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Sosyal Medya
+            </h3>
+            <div>
+              <a href="https://www.linkedin.com/company/albamar-marble/" class="flex items-center space-x-2 hover:text-white transition-colors">
+                <img src="images/in.png" alt="LinkedIn" class="w-45 h-20">
+                <span><br>LinkedIn'de Takip Et</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-6 text-center">
+          <div class="w-32 h-px bg-gray-700 mx-auto mb-4"></div>
+          <p class="text-gray-400">© 2024 Albamar Marble</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script>
+      // AOS Initialization
+      AOS.init();
+      
+      // Navbar Scroll Effect
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var headerStripHeight = $('#header-strip').outerHeight();
+        
+        if (scroll > 50) {
+          // Mail kısmını yavaşça yukarı çek (kaybolsun)
+          var progress = Math.min(scroll / 100, 1);
+          var translateY = -headerStripHeight * progress;
+          
+          $('#header-strip').css('transform', 'translateY(' + translateY + 'px)');
+          $('#main-header').css('top', (headerStripHeight * (1 - progress)) + 'px');
+        } else {
+          // Başlangıç pozisyonuna dön
+          $('#header-strip').css('transform', 'translateY(0)');
+          $('#main-header').css('top', headerStripHeight + 'px');
+        }
+      });
+      
+      // Production Dropdown Menu
+      $('#production-toggle').click(function(e) {
+        e.preventDefault();
+        $('#production-menu').toggleClass('hidden');
+      });
+      
+      // Close dropdown when clicking outside
+      $(document).click(function(e) {
+        if (!$(e.target).closest('#production-dropdown').length) {
+          $('#production-menu').addClass('hidden');
+        }
+      });
+    </script>
+</body>
+</html>

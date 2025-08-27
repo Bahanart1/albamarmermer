@@ -1,0 +1,527 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>ALBAMAR MERMER - Ürünler</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="ALBAMAR MERMER - Mermer ve traverten ürün koleksiyonumuz. Alba Beige, Ruby, Sapphire, Olivium Grey ve daha fazlası.">
+  
+    <!-- Modern Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/urunler.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      
+      /* Product Card */
+      .product-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        transition: all 0.4s ease;
+      }
+      
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      
+      .product-card img {
+        transition: all 0.4s ease;
+      }
+      
+      .product-card:hover img {
+        transform: scale(1.1);
+      }
+      
+      .product-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: all 0.4s ease;
+      }
+      
+      .product-card:hover .product-overlay {
+        transform: translateY(0);
+      }
+      
+      /* Category Tabs */
+      .category-tab {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .category-tab.active {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+        transform: scale(1.05);
+      }
+      
+      .category-tab:hover {
+        transform: scale(1.05);
+      }
+      
+      /* Content Animation */
+      .content-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Stagger Animation */
+      .stagger-animation > * {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: staggerFadeIn 0.6s ease-out forwards;
+      }
+      
+      .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+      .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+      .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+      .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+      .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+      .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+      .stagger-animation > *:nth-child(7) { animation-delay: 0.7s; }
+      .stagger-animation > *:nth-child(8) { animation-delay: 0.8s; }
+      .stagger-animation > *:nth-child(9) { animation-delay: 0.9s; }
+      
+      @keyframes staggerFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</head>
+<body class="bg-white">
+  <!-- Header Strip -->
+  <div id="header-strip" class="bg-red-600 text-white py-2 transition-all duration-500 ease-in-out" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <a href="mailto:export@albamar.com.tr" class="text-sm hover:text-gray-200">&#9993; export@albamar.com.tr</a>
+      <div class="flex space-x-4">
+        <a href="index.html"><img src="images/turkey.svg" alt="Türkçe" class="w-8 h-8"></a>
+        <a href="en/our_products.html"><img src="images/united-kingdom.svg" alt="English" class="w-8 h-8"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header id="main-header" class="fixed w-full z-20 bg-white shadow-lg transition-all duration-500 ease-in-out" style="top: 40px;">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center space-x-3">
+        <img src="images/albamar.svg" alt="Albamar" class="h-16">
+      </div>
+      <nav class="hidden md:flex space-x-8 font-semibold">
+        <a href="index.html" class="hover:text-red-600 transition-colors">Anasayfa</a>
+        <a href="hakkimizda.html" class="hover:text-red-600 transition-colors">Hakkımızda</a>
+        <a href="urunler.html" class="text-red-600 hover:text-red-700 transition-colors">Ürünler</a>
+        <div class="relative" id="production-dropdown">
+          <a href="#" class="hover:text-red-600 transition-colors cursor-pointer" id="production-toggle">Üretim</a>
+          <div class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 hidden z-50 min-w-[120px]" id="production-menu">
+            <a href="fabrika.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Fabrika</a>
+            <a href="ocak.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Ocak</a>
+          </div>
+        </div>
+        <a href="gallery.html" class="hover:text-red-600 transition-colors">Galeri</a>
+        <a href="iletisim.html" class="hover:text-red-600 transition-colors">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section relative h-[60vh] flex items-center justify-center text-white">
+    <div class="text-center content-fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">
+        <span class="text-white">Ürünlerimiz</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Page Title -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <span class="text-red-600">ÜRÜN</span> KOLEKSİYONUMUZ
+        </h2>
+        <div class="w-24 h-1 bg-red-600 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="flex justify-center mb-12" data-aos="fade-up">
+        <div class="flex space-x-4 bg-gray-100 p-2 rounded-full">
+          <button class="category-tab active px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="all">
+            Tümü
+          </button>
+          <button class="category-tab px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="marble">
+            Mermer
+          </button>
+          <button class="category-tab px-6 py-3 rounded-full font-semibold transition-all duration-300" data-category="travertine">
+            Traverten
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation" data-aos="fade-up">
+        <!-- Alba Beige -->
+        <div class="product-card bg-white shadow-lg" data-category="marble">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/mermer/regal.jpg" alt="Alba Beige" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Alba Beige</h3>
+              <p class="text-sm opacity-90">Premium mermer koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Alba Beige</h3>
+            <p class="text-gray-600 mb-4">Elegant ve sofistike görünüm</p>
+            <a href="regal.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Ruby Beige -->
+        <div class="product-card bg-white shadow-lg" data-category="marble">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/mermer/ruby.jpg" alt="Ruby Beige" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Ruby Beige</h3>
+              <p class="text-sm opacity-90">Premium mermer koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Ruby Beige</h3>
+            <p class="text-gray-600 mb-4">Sıcak tonlar ve doğal desenler</p>
+            <a href="ruby.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sapphire -->
+        <div class="product-card bg-white shadow-lg" data-category="marble">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/mermer/sapphire1.jpg" alt="Sapphire" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Sapphire</h3>
+              <p class="text-sm opacity-90">Premium mermer koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Sapphire</h3>
+            <p class="text-gray-600 mb-4">Derin mavi tonlar ve zarafet</p>
+            <a href="sapphire.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Olivium Grey -->
+        <div class="product-card bg-white shadow-lg" data-category="marble">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/mermer/olivium_grey.jpg" alt="Olivium Grey" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Olivium Grey</h3>
+              <p class="text-sm opacity-90">Premium mermer koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Olivium Grey</h3>
+            <p class="text-gray-600 mb-4">Modern gri tonlar ve şıklık</p>
+            <a href="olivium_grey.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Night Thunder -->
+        <div class="product-card bg-white shadow-lg" data-category="marble">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/mermer/night_thunder.jpg" alt="Night Thunder" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Night Thunder</h3>
+              <p class="text-sm opacity-90">Premium mermer koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Night Thunder</h3>
+            <p class="text-gray-600 mb-4">Dramatik siyah tonlar ve güç</p>
+            <a href="crema_bonica.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Da Vinci -->
+        <div class="product-card bg-white shadow-lg" data-category="travertine">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/traverine/da-vinci.jpg" alt="Da Vinci" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Da Vinci</h3>
+              <p class="text-sm opacity-90">Traverten koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Da Vinci</h3>
+            <p class="text-gray-600 mb-4">Sanatsal desenler ve tarihi dokunuş</p>
+            <a href="da-vinci.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mystic -->
+        <div class="product-card bg-white shadow-lg" data-category="travertine">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/traverine/mystic.jpg" alt="Mystic" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Mystic</h3>
+              <p class="text-sm opacity-90">Traverten koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Mystic</h3>
+            <p class="text-gray-600 mb-4">Gizemli desenler ve büyüleyici görünüm</p>
+            <a href="mystic.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Noche -->
+        <div class="product-card bg-white shadow-lg" data-category="travertine">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/traverine/noche.jpg" alt="Noche" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Noche</h3>
+              <p class="text-sm opacity-90">Traverten koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Noche</h3>
+            <p class="text-gray-600 mb-4">Gece esintisi ve romantik tonlar</p>
+            <a href="noche.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Yellow -->
+        <div class="product-card bg-white shadow-lg" data-category="travertine">
+          <div class="relative overflow-hidden">
+            <img src="images/sl/traverine/yellow.jpg" alt="Yellow" class="w-full h-64 object-cover">
+            <div class="product-overlay">
+              <h3 class="text-xl font-bold mb-2">Yellow</h3>
+              <p class="text-sm opacity-90">Traverten koleksiyonu</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Yellow</h3>
+            <p class="text-gray-600 mb-4">Sıcak sarı tonlar ve enerji</p>
+            <a href="yellow.html" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+              <span>Detaylar</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
+    <!-- Marble Background Effect -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800"></div>
+      <div class="absolute inset-0 bg-gray-200"></div>
+    </div>
+    
+    <!-- Animated Decorative Elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-red-600 rounded-full opacity-5 animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-red-600 rounded-full opacity-3 animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-industry text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Fabrika Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Amasya - Çorum Karayolu 25. Km. Organize Sanayi Bölgesi Tahirköse Cad. No: 5 / AMASYA</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:export@albamar.com.tr" class="hover:text-white transition-colors">export@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-mountain text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Ocak Adresi
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-start space-x-2">
+              <i class="fas fa-map-marker-alt mt-1 text-red-500"></i>
+              <span>Ormanözü Köyü Mevki Turhal / TOKAT</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-phone text-red-500"></i>
+              <span>+903582735056</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-fax text-red-500"></i>
+              <span>+903582735059</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i class="fas fa-envelope text-red-500"></i>
+              <a href="mailto:albamar@albamar.com.tr" class="hover:text-white transition-colors">albamar@albamar.com.tr</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="group hover:scale-105 transition-all duration-300">
+          <h3 class="text-white font-bold mb-4 flex items-center group-hover:text-red-400 transition-colors duration-300">
+            <i class="fas fa-share-alt text-red-500 mr-2 group-hover:scale-110 transition-transform duration-300"></i>Sosyal Medya
+          </h3>
+          <div>
+            <a href="https://www.linkedin.com/company/albamar-marble/" class="flex items-center space-x-2 hover:text-white transition-colors">
+              <img src="images/in.png" alt="LinkedIn" class="w-10 h-10">
+              <span>LinkedIn'de Takip Et</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-6 text-center">
+        <div class="w-32 h-px bg-gray-700 mx-auto mb-4"></div>
+        <p class="text-gray-400">© 2024 Albamar Marble - Modern Tasarım</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // AOS Initialization
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true
+    });
+    
+    // Navbar Scroll Effect
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      var headerStripHeight = $('#header-strip').outerHeight();
+      
+      if (scroll > 50) {
+        var progress = Math.min(scroll / 100, 1);
+        var translateY = -headerStripHeight * progress;
+        
+        $('#header-strip').css('transform', 'translateY(' + translateY + 'px)');
+        $('#main-header').css('top', (headerStripHeight * (1 - progress)) + 'px');
+      } else {
+        $('#header-strip').css('transform', 'translateY(0)');
+        $('#main-header').css('top', headerStripHeight + 'px');
+      }
+    });
+    
+    // Category Filter
+    $('.category-tab').click(function() {
+      const category = $(this).data('category');
+      
+      // Update active tab
+      $('.category-tab').removeClass('active');
+      $(this).addClass('active');
+      
+      // Filter products
+      if (category === 'all') {
+        $('.product-card').fadeIn(300);
+      } else {
+        $('.product-card').hide();
+        $(`.product-card[data-category="${category}"]`).fadeIn(300);
+      }
+    });
+    
+    // Production Dropdown Menu
+    $('#production-toggle').click(function(e) {
+      e.preventDefault();
+      $('#production-menu').toggleClass('hidden');
+    });
+    
+    // Close dropdown when clicking outside
+    $(document).click(function(e) {
+      if (!$(e.target).closest('#production-dropdown').length) {
+        $('#production-menu').addClass('hidden');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    $('a[href^="#"]').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 100
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>
